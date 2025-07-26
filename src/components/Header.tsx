@@ -24,10 +24,10 @@ const Header = () => {
 
         {/* Navigation */}
         <nav className="flex items-center space-x-6 text-sm font-medium ml-6">
-          <a href="#" className="transition-colors hover:text-primary">Courses</a>
+          <a href="#courses" className="transition-colors hover:text-primary">Courses</a>
           <a href="#" className="transition-colors hover:text-primary">Instructors</a>
           <a href="#" className="transition-colors hover:text-primary">Community</a>
-          <a href="#" className="transition-colors hover:text-primary">About</a>
+          <a href="#about" className="transition-colors hover:text-primary">About</a>
         </nav>
 
         {/* Right side */}
