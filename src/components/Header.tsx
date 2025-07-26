@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
-import { BookOpen, Search, User, Menu, LogOut } from "lucide-react";
+import { BookOpen, Search, User, Menu, LogOut, Settings } from "lucide-react";
 import { useAuth } from "@/hooks/useAuth";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   const { user, signOut } = useAuth();
@@ -45,6 +46,12 @@ const Header = () => {
             </Button>
           </div>
           <div className="flex items-center space-x-2">
+            <Link to="/dashboard">
+              <Button variant="ghost" size="sm">
+                <Settings className="mr-2 h-4 w-4" />
+                Dashboard
+              </Button>
+            </Link>
             <Button variant="ghost" size="sm">
               <User className="mr-2 h-4 w-4" />
               {user?.user_metadata?.full_name || user?.email}

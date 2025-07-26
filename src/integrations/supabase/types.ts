@@ -14,26 +14,97 @@ export type Database = {
   }
   public: {
     Tables: {
+      course_materials: {
+        Row: {
+          content_text: string | null
+          course_id: string
+          created_at: string | null
+          file_url: string | null
+          id: string
+          is_free: boolean | null
+          material_type: string
+          sort_order: number | null
+          title: string
+          updated_at: string | null
+        }
+        Insert: {
+          content_text?: string | null
+          course_id: string
+          created_at?: string | null
+          file_url?: string | null
+          id?: string
+          is_free?: boolean | null
+          material_type: string
+          sort_order?: number | null
+          title: string
+          updated_at?: string | null
+        }
+        Update: {
+          content_text?: string | null
+          course_id?: string
+          created_at?: string | null
+          file_url?: string | null
+          id?: string
+          is_free?: boolean | null
+          material_type?: string
+          sort_order?: number | null
+          title?: string
+          updated_at?: string | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "course_materials_course_id_fkey"
+            columns: ["course_id"]
+            isOneToOne: false
+            referencedRelation: "courses"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       courses: {
         Row: {
+          category: string | null
+          created_at: string | null
           description: string | null
+          difficulty_level: string | null
+          duration_minutes: number | null
           id: string
           instructor_id: string | null
+          is_published: boolean | null
+          price: number | null
+          thumbnail_url: string | null
           title: string
+          updated_at: string | null
           video_url: string | null
         }
         Insert: {
+          category?: string | null
+          created_at?: string | null
           description?: string | null
+          difficulty_level?: string | null
+          duration_minutes?: number | null
           id?: string
           instructor_id?: string | null
+          is_published?: boolean | null
+          price?: number | null
+          thumbnail_url?: string | null
           title: string
+          updated_at?: string | null
           video_url?: string | null
         }
         Update: {
+          category?: string | null
+          created_at?: string | null
           description?: string | null
+          difficulty_level?: string | null
+          duration_minutes?: number | null
           id?: string
           instructor_id?: string | null
+          is_published?: boolean | null
+          price?: number | null
+          thumbnail_url?: string | null
           title?: string
+          updated_at?: string | null
           video_url?: string | null
         }
         Relationships: [
